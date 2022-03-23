@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IT_lab5.Models.Friend>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Professor"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grade)
+        </td>
+        <td>
+            @if (User.IsInRole("Professor"))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+
+            }
+            @if (User.IsInRole("Professor") || User.IsInRole("Student"))
+            {
+
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+            }
+            @if (User.IsInRole("Professor"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            }
+
+
+
+        </td>
+    </tr>
+}
+
+</table>

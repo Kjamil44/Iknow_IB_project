@@ -74,7 +74,7 @@
 пред тоа треба да овозможи **дво-факторска автентикација** со користење
 на **Google Authenticator**.
 ```
-Чекорите по кои го воспоставивме Google Authenticator: https://github.com/i-marasa/ASPMVC_2FAuth.git
+Чекорите по кои го воспоставивме Google Authenticator: [Github repo на i-marasa](https://github.com/i-marasa/ASPMVC_2FAuth.git) 
 ```
 
 
